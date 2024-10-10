@@ -1,6 +1,9 @@
 import express, { NextFunction, Request, Response } from "express";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cron from "node-cron";
+
+import dotenv from "dotenv";
+import { fetchCoinUpdates } from "./jobs/coinupdates";
 dotenv.config();
 
 const PORT = process.env.PORT;
@@ -22,4 +25,8 @@ app.listen(PORT, async () => {
   }
 
   console.log("Server listening on port:", PORT);
+});
+
+cron.schedule("0 */2 * * *", async () => {
+  await fetchCoinUpdates();
 });
