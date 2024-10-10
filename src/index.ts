@@ -20,6 +20,11 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 app.use("/api/v1/coin", coinRouter);
 
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).json({ msg: "Working..." });
+  return;
+});
+
 app.listen(PORT, async () => {
   try {
     await mongoose.connect(MONGODB_URL);
