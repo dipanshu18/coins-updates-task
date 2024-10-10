@@ -7,7 +7,7 @@ dotenv.config();
 const COINGECKO_API_KEY = process.env.COINGECKO_API_KEY as string;
 
 interface ICoinUpdates {
-  id: string;
+  name: string;
   current_price: number;
   market_cap: number;
   price_change_24h: number;
@@ -32,18 +32,18 @@ export async function fetchCoinUpdates() {
 
       data.map(async (coin) => {
         const coinData: ICoinUpdates = {
-          id: "",
+          name: "",
           current_price: 0,
           market_cap: 0,
           price_change_24h: 0,
         };
-        coinData["id"] = coin.id;
+        coinData["name"] = coin.name.toLowerCase();
         coinData["current_price"] = Number(coin.current_price);
         coinData["market_cap"] = Number(coin.market_cap);
         coinData["price_change_24h"] = Number(coin.price_change_24h);
 
         await coinupdatesModel.create({
-          coin: coinData.id,
+          coin: coinData.name,
           price: coinData.current_price,
           marketCap: coinData.market_cap,
           "24hChange": coinData.price_change_24h,
