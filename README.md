@@ -8,8 +8,8 @@
 
 ## Demo
 
-#### https://coin-updates.dipanshudev.me/api/v1/coin/stats?coin=ethereum
+#### /api/v1/coin/stats?coin=ethereum
 ![image](https://github.com/user-attachments/assets/fbefaf1c-4461-442e-bd69-c1bc542f09d5)
 
-#### https://coin-updates.dipanshudev.me/api/v1/coin/deviation?coin=ethereum
+#### /api/v1/coin/deviation?coin=ethereum
 ![image](https://github.com/user-attachments/assets/24dd6081-580b-49c3-a102-58c0c7c7fa0d)
