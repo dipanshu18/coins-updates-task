@@ -1,6 +1,5 @@
 # Coins Update Task API
 
-Deployed URL => https://coin-updates.dipanshudev.me
 
 ## Routes
 
